@@ -9,7 +9,7 @@ require_once COMPONENTS_PATH . 'templates/header.component.php';
 <section class="hero container" aria-label="Interstellar Agriculture Hero" id="home">
     <h1 class="hero-title">Discover the Wonders of Interstellar Agriculture</h1>
     <p class="hero-subtitle">Cultivating plants that thrive among the stars.</p>
-    <a href="/page/shop/index.php" class="btn btn-primary">Browse Our Plants</a>
+    <a href="/pages/shop/index.php" class="btn btn-primary">Browse Our Plants</a>
 </section>
 
 <?php require_once COMPONENTS_PATH . 'templates/footer.component.php'; ?>
