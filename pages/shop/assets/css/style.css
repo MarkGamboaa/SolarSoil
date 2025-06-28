@@ -73,3 +73,55 @@ html {
   color: var(--color-primary);
   user-select: text;
 }
+
+/* Responsive Design for Shop Page */
+@media (max-width: 1200px) {
+  .plant-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .plant-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .plant-card {
+    padding: 1.2rem 1rem 1.5rem;
+  }
+  .plant-image {
+    height: 120px;
+  }
+}
+@media (max-width: 600px) {
+  .plant-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .plant-card {
+    padding: 0.8rem 0.5rem 1rem;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+  .plant-image {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    aspect-ratio: 1.2/1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .plant-name {
+    font-size: 1.1rem;
+  }
+  .plant-description {
+    font-size: 0.95rem;
+  }
+  .plant-price {
+    font-size: 1rem;
+  }
+}
