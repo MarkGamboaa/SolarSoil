@@ -16,6 +16,11 @@
             "name": "domadla",
             "email": "domadlangbayan@gmail.com",
             "role" : "QA"
+        },
+        {
+            "name" : "carlmarinyo",
+            "email" : "marinojerome2@gmail.com",
+            "role" : "Database"
         }
     ],
     "require": {}
