@@ -20,7 +20,14 @@
                     <li><a href="/index.html" class="nav-link">Home</a></li>
                     <li><a href="/pages/shop/index.php" class="nav-link">Shop</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
-                </ul>
+                    </ul>
+            </nav>
+            <a href="login.php" class="user-link">
+                <span class="user-icon">&#128100;</span> <!-- Unicode user icon -->
+                User
+            </a>
+
+
             </nav>
             <button id="nav-toggle" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false"
                 aria-label="Toggle navigation">
