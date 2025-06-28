@@ -9,7 +9,13 @@
     "authors": [
         {
             "name": "MarkGamboa",
-            "email": "202310110@fit.edu.ph"
+            "email": "202310110@fit.edu.ph",
+            "role" : "Frontend"
+        },
+        {
+            "name": "domadla",
+            "email": "domadlangbayan@gmail.com",
+            "role" : "QA"
         }
     ],
     "require": {}
