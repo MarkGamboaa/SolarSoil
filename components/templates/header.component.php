@@ -22,6 +22,13 @@
                     <li><a href="#about" class="nav-link">About</a></li>
                 </ul>
             </nav>
+            <a href="login.php" class="user-link">
+                <span class="user-icon">&#128100;</span> <!-- Unicode user icon -->
+                User
+            </a>
+
+
+            </nav>
             <button id="nav-toggle" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="hamburger"></span>
