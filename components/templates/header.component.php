@@ -23,7 +23,7 @@
                 </ul>
             </nav>
             <a href="login.php" class="user-link">
-                <span class="user-icon">&#128100;</span> <!-- Unicode user icon -->
+                <span class="user-icon">&#128100;</span>
                 User
             </a>
 
