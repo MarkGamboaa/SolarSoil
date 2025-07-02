@@ -12,6 +12,7 @@
   --font-family: "Poppins", sans-serif;
   --border-radius: 0.75rem;
   --transition-speed: 0.3s;
+  --color-white: rgb(255, 255, 255);
 }
 
 /* Responsive Design Enhancements */
@@ -117,6 +118,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.user-link,
+.user-icon {
+  color: white;
 }
 
 .logo {
