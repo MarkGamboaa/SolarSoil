@@ -1,4 +1,3 @@
-// Authentication page JavaScript
 function switchToSignup() {
   const loginForm = document.getElementById("loginForm");
   const signupForm = document.getElementById("signupForm");
@@ -15,7 +14,6 @@ function switchToLogin() {
   loginForm.classList.add("active");
 }
 
-// Password confirmation validation
 document.addEventListener("DOMContentLoaded", function () {
   const signupForm = document.querySelector("#signupForm form");
   const password = document.getElementById("signupPassword");
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Real-time password match validation
   if (confirmPassword) {
     confirmPassword.addEventListener("input", function () {
       if (password.value !== confirmPassword.value) {
@@ -43,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Add some visual feedback for form validation
   const inputs = document.querySelectorAll("input[required]");
   inputs.forEach((input) => {
     input.addEventListener("blur", function () {
@@ -59,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Name field validation
   const firstName = document.getElementById("signupFirstName");
   const lastName = document.getElementById("signupLastName");
 

@@ -2,10 +2,8 @@
 require_once '../bootstrap.php';
 require_once UTILS_PATH . 'session.util.php';
 
-// Start session
 session_start();
 
-// Check if user is logged in
 if (!isUserLoggedIn()) {
     header('Location: /index.php');
     exit();

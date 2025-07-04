@@ -1,14 +1,11 @@
 <?php
-// Optional: Add any PHP logic here (session checks, error handling, etc.)
 session_start();
 
-// Check if user is already logged in, redirect to home
 if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
     header('Location: /pages/home/index.php');
     exit();
 }
 
-// Handle error messages from URL parameters
 $error_message = '';
 if (isset($_GET['error'])) {
     switch ($_GET['error']) {
@@ -27,7 +24,6 @@ if (isset($_GET['error'])) {
     }
 }
 
-// Handle success messages
 $success_message = '';
 if (isset($_GET['logout']) && $_GET['logout'] === 'success') {
     $success_message = 'You have been successfully logged out.';
@@ -47,11 +43,6 @@ if (isset($_GET['logout']) && $_GET['logout'] === 'success') {
 
 <body>
     <div class="auth-container">
-        <div class="auth-header">
-            <h1 class="auth-logo">SolarSoil</h1>
-            <p class="auth-subtitle">Interstellar Plant Store</p>
-        </div>
-
         <?php if ($error_message): ?>
             <div class="alert alert-error">
                 <?php echo htmlspecialchars($error_message); ?>
@@ -65,9 +56,8 @@ if (isset($_GET['logout']) && $_GET['logout'] === 'success') {
         <?php endif; ?>
 
         <div class="auth-wrapper">
-            <!-- Login Form -->
             <div class="auth-form login-form active" id="loginForm">
-                <h2 class="form-title">Welcome Back</h2>
+                <h2 class="form-title">Welcome To SolarSoil</h2>
                 <p class="form-subtitle">Sign in to your account</p>
 
                 <form action="/auth/login.php" method="POST">
@@ -101,7 +91,6 @@ if (isset($_GET['logout']) && $_GET['logout'] === 'success') {
                 </div>
             </div>
 
-            <!-- Sign Up Form -->
             <div class="auth-form signup-form" id="signupForm">
                 <h2 class="form-title">Join SolarSoil</h2>
                 <p class="form-subtitle">Create your account</p>
@@ -151,10 +140,6 @@ if (isset($_GET['logout']) && $_GET['logout'] === 'success') {
                     </p>
                 </div>
             </div>
-        </div>
-
-        <div class="auth-footer">
-            <p>&copy; 2025 SolarSoil. All rights reserved.</p>
         </div>
     </div>
 

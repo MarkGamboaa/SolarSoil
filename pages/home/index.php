@@ -1,5 +1,4 @@
 <?php
-// Start session first, before any output
 session_start();
 
 require_once '../../bootstrap.php';
