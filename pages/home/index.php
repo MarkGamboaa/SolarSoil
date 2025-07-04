@@ -11,15 +11,13 @@ require_once COMPONENTS_PATH . 'templates/header.component.php';
 ?>
 
 <head>
-    <link rel="stylesheet" href="/pages/shop/assets/css/style.css">
+    <link rel="stylesheet" href="/pages/home/assets/css/style.css">
 </head>
 
-<section class="featured-plants container" aria-label="Featured Plants" id="products" tabindex="-1">
-    <h2 class="section-title">Featured Plants</h2>
-    <div class="plant-grid">
-        <?php displayPlants($featuredPlants); ?>
-    </div>
+<section class="hero container" aria-label="Interstellar Agriculture Hero" id="home">
+    <h1 class="hero-title">Discover the Wonders of Interstellar Agriculture</h1>
+    <p class="hero-subtitle">Cultivating plants that thrive among the stars.</p>
+    <a href="/pages/shop/index.php" class="btn btn-primary">Browse Our Plants</a>
 </section>
-
 
 <?php require_once COMPONENTS_PATH . 'templates/footer.component.php'; ?>

@@ -35,3 +35,21 @@ document.querySelectorAll(".nav-link").forEach((link) => {
     // For normal links (not starting with #), let the browser handle navigation
   });
 });
+
+// User dropdown functionality
+function toggleUserDropdown() {
+  const dropdown = document.querySelector(".user-dropdown");
+  if (dropdown) {
+    dropdown.classList.toggle("active");
+  }
+}
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (event) {
+  const dropdown = document.querySelector(".user-dropdown");
+  const userLink = document.querySelector(".user-link");
+
+  if (dropdown && !dropdown.contains(event.target)) {
+    dropdown.classList.remove("active");
+  }
+});

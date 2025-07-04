@@ -12,20 +12,37 @@
 <body>
     <header class="header" role="banner">
         <div class="container nav-container">
-            <a href="/index.html" class="logo" id="home">
+            <a href="/pages/home/index.php" class="logo" id="home">
                 SolarSoil
             </a>
             <nav class="nav" id="nav-menu" aria-label="Primary Navigation">
                 <ul class="nav-list">
-                    <li><a href="/index.html" class="nav-link">Home</a></li>
+                    <li><a href="/pages/home/index.php" class="nav-link">Home</a></li>
                     <li><a href="/pages/shop/index.php" class="nav-link">Shop</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                 </ul>
             </nav>
-            <a href="login.php" class="user-link">
-                <span class="user-icon">&#128100;</span>
-                User
-            </a>
+            <?php
+            require_once UTILS_PATH . 'session.util.php';
+
+            if (isUserLoggedIn()): ?>
+                <div class="user-dropdown">
+                    <a href="#" class="user-link" onclick="toggleUserDropdown()">
+                        <span class="user-icon">&#128100;</span>
+                        <?php echo htmlspecialchars(getUserFirstName()); ?>
+                        <span class="dropdown-arrow">&#9662;</span>
+                    </a>
+                    <div class="user-dropdown-menu" id="userDropdown">
+                        <a href="/auth/profile.php" class="dropdown-item">Profile</a>
+                        <a href="/auth/logout.php" class="dropdown-item">Logout</a>
+                    </div>
+                </div>
+            <?php else: ?>
+                <a href="/index.php" class="user-link">
+                    <span class="user-icon">&#128100;</span>
+                    Login
+                </a>
+            <?php endif; ?>
 
 
             </nav>
