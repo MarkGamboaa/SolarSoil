@@ -85,7 +85,7 @@ html {
   line-height: 1.6;
   scroll-behavior: smooth;
   background-color: var(--color-bg);
-  background-image: url("/assets/img/background.png");
+  background-image: url("/pages/shop/assets/img/shopbackground.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -123,6 +123,78 @@ main {
 .user-link,
 .user-icon {
   color: white;
+}
+
+/* User Dropdown Styles */
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color var(--transition-speed);
+  cursor: pointer;
+}
+
+.user-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  transition: transform var(--transition-speed);
+}
+
+.user-dropdown.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  min-width: 150px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-speed);
+  z-index: 1000;
+}
+
+.user-dropdown.active .user-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: background-color var(--transition-speed);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-primary);
 }
 
 .logo {
