@@ -61,7 +61,8 @@ RUN echo 'server { \
     } \
 }' > /etc/nginx/http.d/default.conf
 
-# Create supervisor configuration
+# Create supervisor configuration directory and file
+RUN mkdir -p /etc/supervisor/conf.d
 RUN echo '[supervisord] \
 nodaemon=true \
 \
