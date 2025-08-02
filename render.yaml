@@ -1,0 +1,67 @@
+services:
+  # Main web application
+  - type: web
+    name: solarsoil-app
+    env: php
+    buildCommand: composer install --no-dev --optimize-autoloader
+    startCommand: php -S 0.0.0.0:$PORT -t .
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: BASE_URL
+        sync: false
+      - key: DB_HOST
+        fromDatabase:
+          name: solarsoil-postgres
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: solarsoil-postgres
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: solarsoil-postgres
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: solarsoil-postgres
+          property: username
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: solarsoil-postgres
+          property: password
+      - key: MONGO_HOST
+        fromDatabase:
+          name: solarsoil-mongodb
+          property: host
+      - key: MONGO_PORT
+        fromDatabase:
+          name: solarsoil-mongodb
+          property: port
+      - key: MONGO_DB
+        fromDatabase:
+          name: solarsoil-mongodb
+          property: database
+      - key: MONGO_USER
+        fromDatabase:
+          name: solarsoil-mongodb
+          property: username
+      - key: MONGO_PASSWORD
+        fromDatabase:
+          name: solarsoil-mongodb
+          property: password
+
+databases:
+  # PostgreSQL database
+  - name: solarsoil-postgres
+    databaseName: solarsoil
+    user: solarsoil_user
+    plan: free
+
+  # MongoDB database
+  - name: solarsoil-mongodb
+    databaseName: solarsoil
+    user: solarsoil_user
+    plan: free 

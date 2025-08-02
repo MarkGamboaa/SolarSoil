@@ -1,5 +1,5 @@
 <?php
-// Simple health check endpoint for Railway
+// Simple health check endpoint for Render
 header('Content-Type: application/json');
 
 // Basic application health check
@@ -7,7 +7,8 @@ $health = [
     'status' => 'healthy',
     'timestamp' => date('Y-m-d H:i:s'),
     'service' => 'SolarSoil',
-    'version' => '1.0.0'
+    'version' => '1.0.0',
+    'deployment' => 'render'
 ];
 
 // Check if basic PHP functionality is working
