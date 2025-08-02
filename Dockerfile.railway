@@ -17,7 +17,8 @@ RUN apk add --no-cache \
     postgresql-dev \
     libpq \
     nginx \
-    supervisor
+    supervisor \
+    curl
 
 # Install PHP extensions
 RUN docker-php-ext-install pgsql pdo_pgsql intl zip
@@ -43,6 +44,14 @@ RUN echo 'server { \
     server_name _; \
     root /var/www/html; \
     index index.php index.html; \
+    \
+    # Health check endpoint \
+    location = /health.php { \
+        fastcgi_pass 127.0.0.1:9000; \
+        fastcgi_index health.php; \
+        fastcgi_param SCRIPT_FILENAME $document_root/health.php; \
+        include fastcgi_params; \
+    } \
     \
     location / { \
         try_files $uri $uri/ /index.php?$query_string; \
@@ -77,6 +86,14 @@ autostart=true \
 autorestart=true' > /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 8000
+
+# Create a simple health check script
+RUN echo '#!/bin/sh\ncurl -f http://localhost:8000/health.php || exit 1' > /usr/local/bin/healthcheck.sh
+RUN chmod +x /usr/local/bin/healthcheck.sh
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD /usr/local/bin/healthcheck.sh
 
 # Start supervisor to manage both nginx and php-fpm
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"] 
